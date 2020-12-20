@@ -3,16 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var request = require("request");
 // const jwt = require('express-jwt');
 const session = require('express-session');
-const jwt = require('express-jwt');
-const jwks = require('jwks-rsa');
-var helmet = require('helmet');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 var request = require("request");
-const {authenticateJWT} = require('./middlewares/auth');
 var dotenv = require('dotenv')
 
 //put, delete lib
