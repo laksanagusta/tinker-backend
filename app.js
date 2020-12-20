@@ -11,5 +11,3 @@ app.listen(port, () => {
   console.log("helo")
 })
 
-
-module.exports = app;
