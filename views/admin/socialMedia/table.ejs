@@ -25,7 +25,7 @@
                         <td><%= socialMedia[i].name %></td>
                         <td><%= socialMedia[i].code %></td>
                         <td>
-                            <img src="http://localhost:4000/<%= socialMedia[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
+                            <img src="http://tinker-backend.herokuapp.com/<%= socialMedia[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
                         </td>
                         <td>
                             <form action="/socialMedia/<%= socialMedia[i].id %>?_method=DELETE" method="POST">

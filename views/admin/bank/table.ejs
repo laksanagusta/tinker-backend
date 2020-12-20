@@ -27,7 +27,7 @@
                         <td><%= bank[i].accountNumber %></td>
                         <td><%= bank[i].name %></td>
                         <td>
-                            <img src="http://localhost:4000/<%= bank[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
+                            <img src="http://tinker-backend.herokuapp.com/<%= bank[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
                         </td>
                         <td>
                             <form action="/bank/<%= bank[i].id %>?_method=DELETE" method="POST">
