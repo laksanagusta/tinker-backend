@@ -19,6 +19,8 @@ var dotenv = require('dotenv')
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
 
+dotenv.config()
+
 //authentication
 // const { auth, requiresAuth  } = require('express-openid-connect');
 
@@ -80,10 +82,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/sb-admin-2', express.static(path.join(__dirname, 'node_modules/startbootstrap-sb-admin-2')));
 
-const port = process.env.port || 5000;
+const port = process.env.port || 8000;
 
 app.listen(port, () => {
-    console.log('itsworking')
+    console.log(`Working ${process.env.PAYPAL_CLIENT_ID}`)
 });
 
 app.use('/', indexRouter);
