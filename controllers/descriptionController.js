@@ -1,13 +1,13 @@
 const fs = require('fs-extra')
 const path = require('path')
 const Description = require('../models/Description')
+const Product = require('../models/Product')
 const formidable = require('formidable')
 
 module.exports = {
   addDescription: async (req, res) => {
     const { title, productId, about, position } = req.body;
-    try {
-  
+    try {  
         const descriptions = await Description.create({
             title,
             productId,
