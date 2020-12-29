@@ -25,7 +25,7 @@
                         <td><%= socialMedia[i].name %></td>
                         <td><%= socialMedia[i].code %></td>
                         <td>
-                            <img src="http://tinkerbackend-env.eba-j27fwqgg.us-east-2.elasticbeanstalk.com/<%= socialMedia[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
+                            <img src="<%= process.env.BASE_URL %>/<%= socialMedia[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
                         </td>
                         <td>
                             <form action="/socialMedia/<%= socialMedia[i].id %>?_method=DELETE" method="POST">

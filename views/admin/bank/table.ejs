@@ -27,7 +27,7 @@
                         <td><%= bank[i].accountNumber %></td>
                         <td><%= bank[i].name %></td>
                         <td>
-                            <img src="http://tinkerbackend-env.eba-j27fwqgg.us-east-2.elasticbeanstalk.com/<%= bank[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
+                            <img src="<%= process.env.BASE_URL %>/<%= bank[i].imageUrl %>" alt="imageUrl" height="70px" width="70px" />
                         </td>
                         <td>
                             <form action="/bank/<%= bank[i].id %>?_method=DELETE" method="POST">

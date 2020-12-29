@@ -52,6 +52,7 @@ const socialMediaRouter = require('./routes/socialMedia');
 const apiRouter = require('./routes/api');
 const apiSocialMediaRouter = require('./routes/apiSocialMedia');
 const apiEducationRouter = require('./routes/apiEducation');
+const apiExperienceRouter = require('./routes/apiExperience');
 
 // adding Helmet to enhance your API's security
 // app.use(helmet());
@@ -105,6 +106,7 @@ app.use('/socialMedia', socialMediaRouter);
 app.use('/api/v1', apiRouter);
 app.use('/apiSocialMedia/v1', apiSocialMediaRouter);
 app.use('/apiEducation/v1', apiEducationRouter);
+app.use('/apiExperience/v1', apiExperienceRouter);
 
 app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID)

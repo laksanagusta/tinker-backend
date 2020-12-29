@@ -5,12 +5,12 @@
             <form action="/description/add" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" placeholder="Enter name" required>
+                        <label for="name">Title</label>
+                        <input type="text" class="form-control" name="title" placeholder="Enter title" required>
                     </div>
                     <div class="form-group">
                         <label for="name">Image</label>
-                        <input type="file" class="form-control" id="name" name="image" required>
+                        <input type="file" class="form-control" name="image" required>
                     </div>
                     <div class="form-group">
                         <label for="name">Description</label>
@@ -48,8 +48,8 @@
                             <td><%= i+1 %></td>
                             <td><%= description[i].title %></td>
                             <td>
-                                <form action="/description/<%= description[i].id %>?_method=DELETE" method="POST">
-                                    <a href="javascript::void()" data-id="<%= description[i].id %>" data-name="<%= description[i].title %>" data-position="<%= description[i].position %>" data-description="<%= description[i].description %>" class="btn btn-warning btn-sm button-update"><i class="fas fa-edit"></i></a>                                    
+                                <form action="/description/<%= description[i].id %>/<%= description[i].imageUrl %>?_method=DELETE" method="POST">
+                                    <a href="javascript::void()" data-id="<%= description[i].id %>" data-imagepath="<%= description[i].imageUrl %>" data-productId="<%= productId %>" data-name="<%= description[i].title %>" data-position="<%= description[i].position %>" data-description="<%= description[i].description %>" class="btn btn-warning btn-sm button-update"><i class="fas fa-edit"></i></a>                                    
                                     <button type='submit' href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                                 </form>
                             </td>

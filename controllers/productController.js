@@ -94,7 +94,7 @@ module.exports = {
     editProduct: async (req, res) => {
       try {
         const { id } = req.params;
-        const { title, brand, price, about, categoryId} = req.body;
+        const { title, brand, price, about, categoryId, duration, client} = req.body;
         const product = await Product.findOne({ _id: id })
           .populate({ path: 'imageId', select: 'id imageUrl'})
           .populate({ path: 'categoryId', select: 'id name'});
@@ -108,6 +108,8 @@ module.exports = {
           }
           product.title = title;
           product.brand = brand;
+          product.duration = duration;
+          product.client = client;
           product.description = about;
           product.price = price;
           product.categoryId = categoryId;
@@ -115,6 +117,8 @@ module.exports = {
         } else {
           product.title = title;
           product.brand = brand;
+          product.duration = duration;
+          product.client = client;
           product.description = about;
           product.price = price;
           product.categoryId = categoryId;
