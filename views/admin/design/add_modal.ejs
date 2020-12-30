@@ -4,24 +4,40 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add Education</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add Design</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form action="/education/add" method="POST">
+        <form action="/design/add" method="POST" enctype="multipart/form-data">
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="name">University</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+                    <label for="name">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Duration</label>
                     <input type="text" class="form-control" id="duration" name="duration" placeholder="Enter Duration" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required>
+                    <label for="name">Tag</label>
+                    <input type="text" class="form-control" id="tag" name="tag" placeholder="Enter Tag" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Client</label>
+                    <input type="text" class="form-control" id="client" name="client" placeholder="Enter Client" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Enter Description" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">More Description</label>
+                    <input type="text" class="form-control" id="moreDescription" name="moreDescription" placeholder="Enter More Description" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Image</label>
+                    <input type="file" class="form-control" id="image" name="image" required>
                 </div>
             </div>
             <div class="modal-footer">

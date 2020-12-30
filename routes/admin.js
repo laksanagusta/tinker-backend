@@ -14,6 +14,7 @@ router.get('/product', adminController.viewProduct);
 router.get('/user', adminController.viewUser);
 router.get('/socialMedia', adminController.viewSocialMedia);
 router.get('/education', adminController.viewEducation);
+router.get('/design', adminController.viewDesign);
 router.get('/experience', adminController.viewExperience);
 
 module.exports = router;

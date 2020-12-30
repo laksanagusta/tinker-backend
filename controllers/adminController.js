@@ -10,6 +10,7 @@ const path = require('path');
 const SocialMedia = require("../models/SocialMedia");
 const Education = require("../models/Education");
 const Experience = require("../models/Experience");
+const Design = require("../models/Design");
 
 
 module.exports = {
@@ -144,6 +145,23 @@ module.exports = {
             res.render('admin/experience/v_experience', {
                 title: "Antardixa",
                 experience,
+                alert,
+                user: req.session.user
+            });
+        } catch (error) {
+            console.log(error.message)
+            
+        }
+    },
+    viewDesign: async (req, res) => {
+        try {
+            const design = await Design.find() 
+            const alertMessage = req.flash('alertMessage');
+            const alertStatus = req.flash('alertStatus');
+            const alert = {message: alertMessage, status : alertStatus};
+            res.render('admin/design/v_design', {
+                title: "Antardixa",
+                design,
                 alert,
                 user: req.session.user
             });

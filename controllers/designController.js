@@ -5,26 +5,25 @@ const User = require('../models/User')
 
 module.exports = {
     addDesign: async (req, res) => {
-        const {name, duration, title} = req.body;
+        const {title, duration, description, client, tag, moreDescription} = req.body;
         try {
-            console.log(req.body)
             const design = await Design.create({
                 duration,
                 title,
-                imageUrl,
+                imageUrl : `${req.imagePath}`,
                 description,
                 client,
                 tag,
                 moreDescription
             })
 
-            const tools = {
-                name: name,
-                icon: icon,
-            }
+            // const tools = {
+            //     name: name,
+            //     icon: icon,
+            // }
         
-            design.tools.push(tools)
-            await design.save()
+            // design.tools.push(tools)
+            // await design.save()
 
             req.flash('alertMessage', 'Success Add Design')
             req.flash('alertStatus', 'success')
@@ -36,20 +35,35 @@ module.exports = {
         }
     },
     editDesign: async (req, res) => {
-        const { id, name, duration } = req.body;
+        const { title, duration, description, client, tag, moreDescription } = req.body;
         try {
             const design = await Design.findOne({ _id: id });
-            design.name = name;
-            design.duration = duration;
-            design.title = title;
-            await design.save();
+            if (req.imagePath === undefined) {
+                design.title = title;
+                design.duration = duration;
+                design.description = description;
+                design.tag = tag;
+                design.client = client;
+                design.moreDescription = moreDescription;
+                await design.save();
+            }
+            else{
+                design.title = title;
+                design.duration = duration;
+                design.description = description;
+                design.tag = tag;
+                design.client = client;
+                design.moreDescription = moreDescription;
+                design.imageUrl = req.imagePath;
+                await design.save();
+            }
             req.flash('alertMessage', 'Success Update Design');
             req.flash('alertStatus', 'success');
             res.redirect(`/admin/design`);
         } catch (error) {
           req.flash('alertMessage', `${error.message}`);
           req.flash('alertStatus', 'danger');
-          res.redirect(`/product/show-detail-product/${productId}`);
+          res.redirect(`/admin/design`);
         }
       },
 
@@ -57,7 +71,6 @@ module.exports = {
           try {
               const { id } = req.params;
               const design = await Design.findOne({ _id:id })
-              console.log(design)
               design.remove()
               req.flash('alertMessage', 'Success Delete Design');
               req.flash('alertStatus', 'success');

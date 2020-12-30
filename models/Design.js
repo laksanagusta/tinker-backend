@@ -18,7 +18,7 @@ const designSchema = new Schema({
     },
     imageUrl: {
         type: String,
-        ref: true
+        required: true
     },
     description: {
         type: String,
