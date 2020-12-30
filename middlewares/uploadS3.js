@@ -59,7 +59,7 @@ const updateImage = (req, res, next) => {
       //console.table({err, fields, files})
       const {image} = files
 
-      if(image === undefined){
+      if(image.size === 0){
         req.imagePath = data.key  
         req.body = fields  
         next()
