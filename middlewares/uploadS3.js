@@ -60,7 +60,7 @@ const updateImage = (req, res, next) => {
       const {image} = files
 
       if(image.size === 0){
-        req.imagePath = data.key  
+        console.log("masukkk")
         req.body = fields  
         next()
       }

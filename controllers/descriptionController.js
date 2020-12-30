@@ -33,7 +33,7 @@ module.exports = {
       const { id, title, productId, about, position } = req.body;
       try {
         const descriptions = await Description.findOne({ _id: id }); 
-        if (req.imagePath == undefined) {
+        if (req.imagePath === undefined) {
           descriptions.title = title;
           descriptions.description = about;
           descriptions.position = position;
