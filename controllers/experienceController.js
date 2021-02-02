@@ -28,7 +28,7 @@ module.exports = {
         }
     },
     editExperience: async (req, res) => {
-        const { id, name, duration } = req.body;
+        const { id, name, duration, title } = req.body;
         try {
             const experience = await Experience.findOne({ _id: id });
             experience.name = name;

@@ -88,7 +88,7 @@ app.use('/sb-admin-2', express.static(path.join(__dirname, 'node_modules/startbo
 const port = process.env.port || 8000;
 
 app.listen(port, () => {
-    console.log(`Working ${process.env.PAYPAL_CLIENT_ID}`)
+    console.log(`Working good`)
 });
 
 app.use('/', indexRouter);

@@ -3,7 +3,7 @@ const Experience = require('../../models/Experience');
 module.exports = {
     getExperience: async (req, res) => {
       try {
-        const experience = await Experience.find().sort({ duration:-1 })
+        const experience = await Experience.find().sort({ _id:-1 })
         res.status(200).json({
           experience
         })
