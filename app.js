@@ -26,7 +26,7 @@ dotenv.config()
 
 //import mongoose
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://dika:xVimZHGeoRlyHzuh@cluster0.vq7q8.mongodb.net/db_portfolio?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://dika:romanisti@cluster0.vq7q8.mongodb.net/db_portfolio?retryWrites=true&w=majority',{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
