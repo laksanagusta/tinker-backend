@@ -28,7 +28,7 @@ const uploadImage = (req, res, next) => {
       }
 
       const params = {
-        Bucket: 'tinker-storage',
+        Bucket: 'dika-portfolio',
         Key: `image/${uuidv4()}`,
         Body: fs.readFileSync(image.path),
         ACL: 'public-read',
@@ -71,7 +71,7 @@ const updateImage = (req, res, next) => {
         }
 
         const deleteParams = {
-          Bucket: 'tinker-storage',
+          Bucket: 'dika-portfolio',
           Key: `${fields.imagepath}`,
         }
 
@@ -81,7 +81,7 @@ const updateImage = (req, res, next) => {
         })
   
         const params = {
-          Bucket: 'tinker-storage',
+          Bucket: 'dika-portfolio',
           Key: `image/${uuidv4()}`,
           Body: fs.readFileSync(image.path),
           ACL: 'public-read',
@@ -105,7 +105,7 @@ const deleteImage = (req, res, next) => {
   const {imageUrl} = req.params
 
   const deleteParams = {
-      Bucket: 'tinker-storage',
+      Bucket: 'dika-portfolio',
       Key: `image/${imageUrl}`,
   }
 
